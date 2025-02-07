@@ -1,0 +1,20 @@
+{
+    "applinks": {
+        "details": [
+            {
+                "appIDs": [
+                    "SV944GWKB2.com.tpi.grandcasino.internal",
+                    "SV944GWKB2.com.tpi.grandcasino.internal.qa"
+                ],
+                "paths": [
+                    "*"
+                ],
+                "components": [
+                    {
+                        "/": "/*"
+                    }
+                ]
+            }
+        ]
+    }
+}

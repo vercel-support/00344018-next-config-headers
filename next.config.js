@@ -1,6 +1,25 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+/**
+* @type {import('next').NextConfig}
+*/
 
-module.exports = nextConfig
+const contentHeaderPlugin = (nextConfig = {}) => {
+  console.log("Setting headers for apple-app-site-association 1");
+  return Object.assign({}, nextConfig, {
+    async headers() {
+      console.log("Setting headers for apple-app-site-association 3");
+      return [
+        {
+          source: "/.well-known/apple-app-site-association",
+          headers: [
+            {
+              key: "Content-Type",
+              value: "application/json",
+            },
+          ],
+        },
+      ];
+    },
+  });
+};
+
+module.exports = contentHeaderPlugin;
